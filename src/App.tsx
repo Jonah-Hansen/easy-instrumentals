@@ -1,14 +1,6 @@
-import { useEffect, useState } from 'react';
 import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
-import { getTracks } from './supabase/supabase';
 
 function App() {
-
-  //demo usage of supabase queries
-  const [tracks, setTracks] = useState(null)
-  useEffect(() => {
-    getTracks().then(data => setTracks(data))
-  }, [])
 
   return (
     <BrowserRouter>
