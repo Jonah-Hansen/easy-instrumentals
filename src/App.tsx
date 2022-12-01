@@ -1,4 +1,5 @@
 import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
+import CreatePage from "./pages/CreatePage";
 
 function App() {
 
@@ -6,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to='/create' />} />
-        <Route path="/create" element={<></>} />
+        <Route path="/create" element={<CreatePage />} />
         <Route path="*" element={
           <>
             <h1>Page Not Found</h1>
