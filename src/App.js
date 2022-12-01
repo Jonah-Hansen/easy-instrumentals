@@ -1,18 +1,14 @@
-import { createClient } from '@supabase/supabase-js';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
+import { getTracks } from './supabase/supabase';
 
 function App() {
-  const { REACT_APP_API_URL: api_url, REACT_APP_API_KEY: api_key } = process.env
-  const supabase = createClient(api_url, api_key)
 
+  //demo usage of supabase queries
+  const [tracks, setTracks] = useState(null)
   useEffect(() => {
-    const getTracks = async () => {
-      let { data: tracks } = await supabase.from('tracks').select('*')
-      console.log(tracks);
-    }
-    getTracks()
-  }, [supabase])
+    getTracks().then(data => setTracks(data))
+  }, [])
 
   return (
     <BrowserRouter>
