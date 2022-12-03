@@ -7,12 +7,12 @@ export const getTracks = async () => {
   return data
 }
 
-export const getTrackById = async (id: string) => {
+export const getTrackById = async (id) => {
   const { data } = await supabase.from('tracks').select('*').eq('id', id)
   return data
 }
 
-export const getMidiURL = async (id: string) => {
+export const getMidiURL = async (id) => {
   const { data } = await supabase.storage.from('midi').getPublicUrl(`${id}.mid`)
   return data.publicUrl
 }
