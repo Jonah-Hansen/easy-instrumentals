@@ -1,0 +1,8 @@
+@use './styles/partials/reset';
+@use './styles/partials/all' as *;
+@use './styles/partials/typography' as *;
+
+html {
+  background-color: $bg-1;
+  color: white;
+}

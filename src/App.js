@@ -1,4 +1,5 @@
 import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
+import './App.scss';
 import CreatePage from "./pages/CreatePage";
 
 function App() {
