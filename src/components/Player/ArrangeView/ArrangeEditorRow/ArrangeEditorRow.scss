@@ -1,0 +1,22 @@
+@use '../../../../styles/partials/all' as *;
+
+.arrange-editor-row {
+  display: flex;
+  height: $trackHeight;
+  align-items: center;
+  border-bottom: 1px solid $borders;
+
+  &__label {
+    width: 8rem;
+    padding: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__track {
+    height: 100%;
+    width: 100%;
+    background-color: $bg-2;
+    border-left: 1px solid $borders;
+  }
+}
