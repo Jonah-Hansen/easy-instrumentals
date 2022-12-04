@@ -1,0 +1,39 @@
+@use '../../../styles/partials/all' as *;
+
+.player-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background-color: $bg-2;
+  padding: 1rem;
+  border-bottom: 1px solid $borders;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    aspect-ratio: 1/1;
+    height: 2.5rem;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: $bg-3;
+    }
+
+    & * > path {
+      fill: white;
+    }
+
+    &--play-pause {
+      @extend .player-controls__button;
+      background-color: $prime-blue;
+
+      &:hover {
+        background-color: $prime-blue;
+        filter: brightness(.75);
+      }
+    }
+  }
+}
