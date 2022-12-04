@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ArrangeView from './ArrangeView/ArrangeView'
 import PlayerHeader from './PlayerHeader/PlayerHeader'
 
 export default function Player() {
@@ -8,7 +9,7 @@ export default function Player() {
   return (
     <div>
       <PlayerHeader tabState={{ activeTab, setActiveTab }} />
-      {/* view */}
+      <ArrangeView />
       {/* controls */}
     </div>
   )

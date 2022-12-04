@@ -1,0 +1,13 @@
+@use '../../../../styles/partials/all' as *;
+
+.arrange-toolbar {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid $borders;
+
+
+  &__heading {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}

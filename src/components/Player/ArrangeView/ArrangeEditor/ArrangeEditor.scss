@@ -1,0 +1,31 @@
+@use '../../../../styles/partials/all' as *;
+
+.arrange-editor {
+  display: flex;
+
+  &__spacer {
+    &--top {
+      height: 2rem;
+      width: 100%;
+      border-bottom: 1px solid $borders;
+    }
+  }
+
+  &__tracks {
+    border-right: 1px solid $borders;
+  }
+
+  &__track {
+    display: flex;
+    align-items: center;
+    font-size: .75rem;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid $borders;
+  }
+
+  &__canvas-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
