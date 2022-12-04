@@ -1,5 +1,6 @@
 @use '../../../styles/partials/all' as *;
 
 .player-ruler {
+  border-bottom: 1px solid $borders;
   height: 2rem;
 }
