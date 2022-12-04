@@ -1,12 +1,11 @@
+import Player from "../components/Player/Player"
 
 function CreatePage() {
 
   return (
     <main>
-      {/* player */}
+      <Player />
       {/* track browser */}
-      <p>test</p>
-      <h1>test2</h1>
     </main>
   )
 }

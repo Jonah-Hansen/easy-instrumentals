@@ -1,0 +1,53 @@
+@use '../../../styles/partials/all' as *;
+
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $bg-2;
+
+  &__nav {
+    display: flex;
+  }
+
+  &__tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: .5rem;
+
+    &:hover {
+      background-color: $bg-3;
+    }
+
+    & * {
+      @include inactive-filter;
+    }
+
+    &.active {
+      background-color: $bg-1;
+      border-top: 1px solid $prime-blue;
+
+      & * {
+        filter: none;
+      }
+    }
+  }
+
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+
+    & path {
+      fill: white;
+    }
+  }
+
+  &__label {
+    display: none;
+
+    @include tablet {
+      display: inline;
+    }
+  }
+}
