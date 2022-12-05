@@ -1,0 +1,12 @@
+@use './styles/partials/reset';
+@use './styles/partials/typography';
+@use './styles/partials/all' as *;
+
+html {
+  background-color: $bg-1;
+}
+
+body {
+  font-family: 'roboto', arial, sans-serif;
+  color: white;
+}

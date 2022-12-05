@@ -1,0 +1,11 @@
+//create map to iterate over for font types
+$fontWeights: ("Thin": 100, "Regular": 400, "Medium": 500, "Bold": 700, "Black": 900);
+
+//generate font-face for each font weight, using the font file with the name matching the type of font (regular, demi, bold, etc).
+@each $type, $weight in $fontWeights {
+  @font-face {
+    font-family: "roboto";
+    src: url("../../assets/fonts/Roboto-#{$type}.ttf") format("truetype");
+    font-weight: $weight;
+  }
+}

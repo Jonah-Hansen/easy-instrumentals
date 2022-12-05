@@ -1,0 +1,23 @@
+@use '../../../styles/partials/all' as *;
+
+.browser-track {
+  display: flex;
+  align-items: center;
+  background-color: $bg-1;
+  border-radius: 50px;
+  text-align: center;
+  padding: .5rem;
+
+
+  & * {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &:hover {
+    background-color: $bg-3;
+  }
+}

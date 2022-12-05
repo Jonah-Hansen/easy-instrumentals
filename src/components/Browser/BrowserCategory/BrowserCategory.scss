@@ -1,0 +1,21 @@
+@use '../../../styles/partials/all' as *;
+
+.browser-category {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 4rem;
+  width: 25%;
+
+  &__heading {
+    font-size: 1.25rem;
+    border-bottom: 1px solid white;
+    text-align: center;
+  }
+
+  &__track-list {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+}

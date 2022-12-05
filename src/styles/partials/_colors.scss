@@ -1,0 +1,11 @@
+$bg-1: #272935;
+$bg-2: #1F212B;
+$bg-3: #2F3341;
+
+$prime-blue: #3C57DD;
+$borders: #4e5363;
+
+@mixin inactive-filter() {
+  //wacky filter to get a faded bluish hue for inactive color when base color is white
+  filter: brightness(.75) saturate(1000) sepia(1) hue-rotate(190deg) opacity(.65);
+}
