@@ -1,13 +1,13 @@
 import ArrangeEditorRow from '../ArrangeEditorRow/ArrangeEditorRow'
 import './ArrangeEditor.scss'
 
-export default function ArrangeEditor() {
+export default function ArrangeEditor({ tracksState }) {
 
-  const tracks = ['melody', 'chords', 'bass', 'drums',]
+  const trackTypes = ['melody', 'chords', 'bass', 'drums',]
 
   return (
     <ul className='arrange-editor'>
-      {tracks.map((track, index) => <ArrangeEditorRow key={index} title={track} />)}
+      {trackTypes.map((trackType, index) => <ArrangeEditorRow key={index} title={trackType} tracksState={tracksState} />)}
     </ul>
   )
 }
