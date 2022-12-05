@@ -1,3 +1,4 @@
+import Browser from "../components/Browser/Browser"
 import Player from "../components/Player/Player"
 
 function CreatePage() {
@@ -5,7 +6,7 @@ function CreatePage() {
   return (
     <main>
       <Player />
-      {/* track browser */}
+      <Browser />
     </main>
   )
 }

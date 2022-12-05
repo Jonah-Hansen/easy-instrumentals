@@ -1,0 +1,23 @@
+@use '../../styles/partials/all' as *;
+
+.browser {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+
+  &__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__library {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background-color: $bg-2;
+    padding: 1rem;
+    border: 1px solid $borders;
+    border-radius: 12px;
+  }
+}

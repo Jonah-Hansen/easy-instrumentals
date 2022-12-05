@@ -22,7 +22,7 @@ export default function PlayerHeader({ tabState }) {
         </div>
         {/* piano roll tab */}
         <div
-          onClick={() => setActiveTab('piano')}
+          // onClick={() => setActiveTab('piano')}
           className={
             `player-header__tab ${activeTab === 'piano' ? ' active' : ''}`
           }
