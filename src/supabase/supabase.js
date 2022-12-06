@@ -13,6 +13,6 @@ export const getTrackById = async (id) => {
 }
 
 export const getMidiURL = async (id) => {
-  const { data } = await supabase.storage.from('midi').getPublicUrl(`${id}.mid`)
+  const { data } = await supabase.storage.from('track-files').getPublicUrl(`${id}`)
   return data.publicUrl
 }

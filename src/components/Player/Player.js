@@ -1,4 +1,3 @@
-import { Midi } from '@tonejs/midi'
 import { useEffect, useState } from 'react'
 import { getMidiURL } from '../../supabase/supabase'
 import ArrangeView from './ArrangeView/ArrangeView'
@@ -9,11 +8,11 @@ export default function Player({ tracksState }) {
 
   const [activeTab, setActiveTab] = useState('arrange')
 
-  const [melodyMidi, setMelodyMidi] = useState({})
-  const [chordsMidi, setChordsMidi] = useState({})
-  const [bassMidi, setBassMidi] = useState({})
-  const [drumsMidi, setDrumsdMidi] = useState({})
-  const allMidi = { melody: melodyMidi, chords: chordsMidi, bass: bassMidi, drums: drumsMidi }
+  const [melodyFile, setMelodyFile] = useState(null)
+  const [chordsFile, setChordsFile] = useState(null)
+  const [bassFile, setBassFile] = useState(null)
+  const [drumsFile, setDrumsFile] = useState(null)
+  const allFiles = { melodyFile, chordsFile, bassFile, drumsFile }
 
   const [currentTracks, setCurrentTracks] = useState(
     { melody: {}, chords: {}, bass: {}, drums: {} }
@@ -23,27 +22,20 @@ export default function Player({ tracksState }) {
   useEffect(() => {
     if (currentTracks.melody.id) {
       getMidiURL(currentTracks.melody.id)
-        .then(data =>
-          Midi.fromUrl(data)
-            .then(midi => setMelodyMidi(midi))
-        )
+        .then(file => setMelodyFile(file))
     }
     if (currentTracks.chords.id) {
       getMidiURL(currentTracks.chords.id)
-        .then(data =>
-          Midi.fromUrl(data)
-            .then(midi => setChordsMidi(midi))
-        )
+        .then(file => setChordsFile(file))
     }
     if (currentTracks.bass.id) {
       getMidiURL(currentTracks.bass.id)
-        .then(data =>
-          Midi.fromUrl(data)
-            .then(midi => setBassMidi(midi))
-        )
+        .then(file => setBassFile(file))
     }
-
-
+    if (currentTracks.drums.id) {
+      getMidiURL(currentTracks.drums.id)
+        .then(file => setDrumsFile(file))
+    }
   }, [currentTracks])
 
 
@@ -51,7 +43,7 @@ export default function Player({ tracksState }) {
     <div>
       <PlayerHeader tabState={{ activeTab, setActiveTab }} />
       <ArrangeView tracksState={tracksState} currentTracksState={currentTracksState} />
-      <PlayerControls allMidi={allMidi} />
+      <PlayerControls allFiles={allFiles} />
     </div>
   )
 }
