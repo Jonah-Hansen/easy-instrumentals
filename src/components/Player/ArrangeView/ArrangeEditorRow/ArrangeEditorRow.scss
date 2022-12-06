@@ -18,5 +18,8 @@
     width: 100%;
     background-color: $bg-2;
     border-left: 1px solid $borders;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
   }
 }
