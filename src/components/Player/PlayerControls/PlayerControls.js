@@ -1,5 +1,5 @@
 import { Pause, PlayArrow, Stop } from "@mui/icons-material";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import ReactHowler from 'react-howler';
 
 import './PlayerControls.scss';
