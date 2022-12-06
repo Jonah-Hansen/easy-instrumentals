@@ -2,8 +2,8 @@ import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(process.env.REACT_APP_API_URL || '', process.env.REACT_APP_API_KEY || '')
 
-export const getTracksByType = async (type) => {
-  const { data } = await supabase.from('tracks').select('id,title').ilike('type', type)
+export const getAllTracks = async () => {
+  const { data } = await supabase.from('tracks').select('id,title,type')
   return data
 }
 
@@ -13,6 +13,6 @@ export const getTrackById = async (id) => {
 }
 
 export const getMidiURL = async (id) => {
-  const { data } = await supabase.storage.from('midi').getPublicUrl(`${id}.mid`)
+  const { data } = await supabase.storage.from('track-files').getPublicUrl(`${id}`)
   return data.publicUrl
 }

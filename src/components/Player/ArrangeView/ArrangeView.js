@@ -1,11 +1,11 @@
 import ArrangeEditor from "./ArrangeEditor/ArrangeEditor";
 import ArrangeToolbar from "./ArrangeToolbar/ArrangeToolbar";
 
-export default function ArrangeView() {
+export default function ArrangeView({ tracksState, currentTracksState }) {
   return (
     <section>
       <ArrangeToolbar />
-      <ArrangeEditor />
+      <ArrangeEditor tracksState={tracksState} currentTracksState={currentTracksState} />
     </section>
   )
 }
