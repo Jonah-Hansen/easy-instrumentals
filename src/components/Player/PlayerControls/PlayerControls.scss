@@ -30,9 +30,14 @@
       @extend .player-controls__button;
       background-color: $prime-blue;
 
-      &:hover {
+      &:hover, &.disabled {
         background-color: $prime-blue;
         filter: brightness(.75);
+      }
+
+      & span {
+        display: flex;
+        align-items: center;
       }
 
       & circle {

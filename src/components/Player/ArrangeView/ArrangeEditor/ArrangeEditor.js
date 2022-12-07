@@ -1,7 +1,7 @@
 import ArrangeEditorRow from '../ArrangeEditorRow/ArrangeEditorRow'
 import './ArrangeEditor.scss'
 
-export default function ArrangeEditor({ tracksState, currentTracksState }) {
+export default function ArrangeEditor({ tracksState, currentTracksState, }) {
 
   const currentTracks = currentTracksState.currentTracks
 
