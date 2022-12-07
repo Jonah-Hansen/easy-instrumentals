@@ -1,14 +1,19 @@
 import { Pause, PlayArrow, Stop } from "@mui/icons-material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactHowler from 'react-howler';
 
 import './PlayerControls.scss';
 
 export default function PlayerControls({ allFiles }) {
-
   const { melodyFile, chordsFile, bassFile, drumsFile } = allFiles
 
   const [isPlaying, setIsPlaying] = useState(false)
+
+  useEffect(() => {
+    window.Howler.stop()
+    setIsPlaying(false)
+  }, [melodyFile, chordsFile, bassFile, drumsFile])
+
 
   return (
     <div className='player-controls'>
@@ -20,9 +25,7 @@ export default function PlayerControls({ allFiles }) {
         <Stop />
       </button>
       <button className='player-controls__button--play-pause'
-        onClick={() => {
-          setIsPlaying(!isPlaying)
-        }} >
+        onClick={() => setIsPlaying(!isPlaying)} >
         {isPlaying ? <Pause /> : <PlayArrow />}
       </button>
       {melodyFile && <ReactHowler html5={true} src={melodyFile} playing={isPlaying} />}

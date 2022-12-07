@@ -12,8 +12,14 @@ export default function ArrangeEditorRow({ title, tracksState, currentTracksStat
       const newCurrentTracks = { ...currentTracks }
       newCurrentTracks[title] = track
       setCurrentTracks(newCurrentTracks)
-      const newTracks = [...tracks]
-      setTracks(newTracks.filter(browserTrack => browserTrack.id !== track.id))
+      const allTracks = [...tracks]
+      Object.values(currentTracks).forEach(track => {
+        if (track.id) allTracks.push(track)
+      })
+      const newTracks = allTracks.filter(track => track.id !== newCurrentTracks[track.type].id)
+      console.log(newTracks);
+      setTracks(newTracks)
+
     },
     collect: (monitor) => ({
       canDrop: monitor.canDrop(),
