@@ -41,6 +41,11 @@ export default function PlayerControls({ allFiles, trackVolumes }) {
     setMasterVolume(window.Howler.volume)
   }
 
+  const handleEnd = () => {
+    window.Howler.stop()
+    setIsPlaying(false)
+  }
+
   return (
     <div className='player-controls'>
       <div className='player-controls__volume'>
@@ -59,10 +64,10 @@ export default function PlayerControls({ allFiles, trackVolumes }) {
         onClick={() => !hiddenPlay && setIsPlaying(!isPlaying)} >
         {isPlaying ? <Pause /> : hiddenPlay ? <CircularProgress /> : <PlayArrow />}
       </button>
-      {melodyFile && <ReactHowler html5={true} src={melodyFile} playing={isPlaying || hiddenPlay} onLoad={onLoad} volume={trackVolumes.melody} />}
-      {chordsFile && <ReactHowler html5={true} src={chordsFile} playing={isPlaying || hiddenPlay} onLoad={onLoad} volume={trackVolumes.chords} />}
-      {bassFile && <ReactHowler html5={true} src={bassFile} playing={isPlaying || hiddenPlay} onLoad={onLoad} volume={trackVolumes.bass} />}
-      {drumsFile && <ReactHowler html5={true} src={drumsFile} playing={isPlaying || hiddenPlay} onLoad={onLoad} volume={trackVolumes.drums} />}
+      {melodyFile && <ReactHowler html5={true} src={melodyFile} playing={isPlaying || hiddenPlay} onLoad={onLoad} volume={trackVolumes.melody} onEnd={handleEnd} />}
+      {chordsFile && <ReactHowler html5={true} src={chordsFile} playing={isPlaying || hiddenPlay} onLoad={onLoad} volume={trackVolumes.chords} onEnd={handleEnd} />}
+      {bassFile && <ReactHowler html5={true} src={bassFile} playing={isPlaying || hiddenPlay} onLoad={onLoad} volume={trackVolumes.bass} onEnd={handleEnd} />}
+      {drumsFile && <ReactHowler html5={true} src={drumsFile} playing={isPlaying || hiddenPlay} onLoad={onLoad} volume={trackVolumes.drums} onEnd={handleEnd} />}
     </div >
   )
 }

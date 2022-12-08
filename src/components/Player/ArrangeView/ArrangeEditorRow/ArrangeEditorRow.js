@@ -5,7 +5,6 @@ import './ArrangeEditorRow.scss'
 
 export default function ArrangeEditorRow({ title, tracksState, currentTracksState, setFile, volumesState }) {
   const { trackVolumes, setTrackVolumes } = volumesState
-  console.log(trackVolumes);
 
   const { tracks, setTracks } = tracksState
   const { currentTracks, setCurrentTracks } = currentTracksState
