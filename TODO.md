@@ -1,5 +1,5 @@
 <!-- //-add volume control for global and each track -->
-//-stop playback when all tracks finished playing
+<!-- //-stop playback when all tracks finished playing -->
 //-sorting
 //-home page/main header
 //-keyboard controls
