@@ -2,7 +2,7 @@ import { Clear } from '@mui/icons-material'
 import { useDrop } from 'react-dnd'
 import './ArrangeEditorRow.scss'
 
-export default function ArrangeEditorRow({ title, tracksState, currentTracksState }) {
+export default function ArrangeEditorRow({ title, tracksState, currentTracksState, setFile }) {
 
   const { tracks, setTracks } = tracksState
   const { currentTracks, setCurrentTracks } = currentTracksState
@@ -34,6 +34,7 @@ export default function ArrangeEditorRow({ title, tracksState, currentTracksStat
     const allTracks = [...tracks]
     allTracks.push(currentTracks[title])
     setTracks(allTracks)
+    setFile(null)
 
   }
 

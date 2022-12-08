@@ -13,6 +13,7 @@ export default function Player({ tracksState }) {
   const [bassFile, setBassFile] = useState(null)
   const [drumsFile, setDrumsFile] = useState(null)
   const allFiles = { melodyFile, chordsFile, bassFile, drumsFile }
+  const setFiles = { melody: setMelodyFile, chords: setChordsFile, bass: setBassFile, drums: setDrumsFile }
 
   const [currentTracks, setCurrentTracks] = useState(
     { melody: {}, chords: {}, bass: {}, drums: {} }
@@ -42,7 +43,7 @@ export default function Player({ tracksState }) {
   return (
     <div>
       <PlayerHeader tabState={{ activeTab, setActiveTab }} />
-      <ArrangeView tracksState={tracksState} currentTracksState={currentTracksState} />
+      <ArrangeView tracksState={tracksState} currentTracksState={currentTracksState} setFiles={setFiles} />
       <PlayerControls allFiles={allFiles} />
     </div>
   )

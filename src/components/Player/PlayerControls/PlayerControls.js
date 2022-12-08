@@ -1,11 +1,16 @@
 import { Pause, PlayArrow, Stop } from "@mui/icons-material";
 import { CircularProgress } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactHowler from 'react-howler';
 import './PlayerControls.scss';
 
 export default function PlayerControls({ allFiles }) {
   const { melodyFile, chordsFile, bassFile, drumsFile } = allFiles
+  let prevMelody = useRef(melodyFile)
+  let prevChords = useRef(chordsFile)
+  let prevBass = useRef(bassFile)
+  let prevDrums = useRef(drumsFile)
+
 
   const [isPlaying, setIsPlaying] = useState(false)
   const [hiddenPlay, setHiddenPlay] = useState(true)
@@ -14,13 +19,19 @@ export default function PlayerControls({ allFiles }) {
     window.Howler.mute(true)
     setIsPlaying(false)
     setHiddenPlay(true)
+    if ((prevMelody.current && !melodyFile) || (prevChords.current && !chordsFile) || (prevBass.current && !bassFile) || (prevDrums.current && !drumsFile)) {
+      onLoad()
+    }
+    prevMelody.current = melodyFile
+    prevChords.current = chordsFile
+    prevBass.current = bassFile
+    prevDrums.current = drumsFile
   }, [melodyFile, chordsFile, bassFile, drumsFile])
 
   const onLoad = () => {
     window.Howler.stop()
     setHiddenPlay(false)
     window.Howler.mute(false)
-    console.log('loaded');
   }
 
   return (
