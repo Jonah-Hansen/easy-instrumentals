@@ -1,6 +1,6 @@
 import { Help as HelpIcon } from "@mui/icons-material"
 import { ReactComponent as ArrangeIcon } from '../../../assets/images/icons/arrange.svg'
-import { ReactComponent as PianoIcon } from '../../../assets/images/icons/piano.svg'
+// import { ReactComponent as PianoIcon } from '../../../assets/images/icons/piano.svg'
 import './PlayerHeader.scss'
 
 export default function PlayerHeader({ tabState }) {
@@ -21,7 +21,7 @@ export default function PlayerHeader({ tabState }) {
           <span className="player-header__label">Arrange</span>
         </div>
         {/* piano roll tab */}
-        <div
+        {/* <div
           // onClick={() => setActiveTab('piano')}
           className={
             `player-header__tab ${activeTab === 'piano' ? ' active' : ''}`
@@ -29,7 +29,7 @@ export default function PlayerHeader({ tabState }) {
         >
           <PianoIcon className="player-header__icon" />
           <span className="player-header__label">Piano Roll</span>
-        </div>
+        </div> */}
       </nav>
       {/* help button tab */}
       <div className="player-header__tab">
