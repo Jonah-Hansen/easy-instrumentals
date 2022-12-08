@@ -1,8 +1,11 @@
-import { Clear } from '@mui/icons-material'
+import { Clear, VolumeDown, VolumeUp } from '@mui/icons-material'
+import { Slider } from '@mui/material'
 import { useDrop } from 'react-dnd'
 import './ArrangeEditorRow.scss'
 
-export default function ArrangeEditorRow({ title, tracksState, currentTracksState, setFile }) {
+export default function ArrangeEditorRow({ title, tracksState, currentTracksState, setFile, volumesState }) {
+  const { trackVolumes, setTrackVolumes } = volumesState
+  console.log(trackVolumes);
 
   const { tracks, setTracks } = tracksState
   const { currentTracks, setCurrentTracks } = currentTracksState
@@ -35,7 +38,12 @@ export default function ArrangeEditorRow({ title, tracksState, currentTracksStat
     allTracks.push(currentTracks[title])
     setTracks(allTracks)
     setFile(null)
+  }
 
+  const handleVolume = (e) => {
+    const newVolumes = { ...trackVolumes }
+    newVolumes[title] = e.target.value / 100
+    setTrackVolumes(newVolumes)
   }
 
   return (
@@ -47,10 +55,19 @@ export default function ArrangeEditorRow({ title, tracksState, currentTracksStat
         style={isOver ? { filter: 'brightness(2)' } : canDrop ? { filter: 'brightness(1.5)' } : {}}
       >
         {currentTracks[title] && <span>{currentTracks[title].title}</span>}
-        {currentTracks[title].id && <button
-          className='arrange-editor-row__remove' onClick={handleDelete}>
-          <Clear />
-        </button>}
+        {currentTracks[title].id &&
+          <div className='arrange-editor-row__controls'>
+            <button
+              className='arrange-editor-row__remove' onClick={handleDelete}>
+              <Clear />
+            </button>
+            <div className='arrange-editor-row__volume'>
+              <VolumeDown />
+              <Slider aria-label='volume' value={trackVolumes[title] * 100} onChange={handleVolume} />
+              <VolumeUp />
+            </div>
+          </div>
+        }
       </div>
     </li>
   )
