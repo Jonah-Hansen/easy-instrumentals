@@ -7,6 +7,18 @@
   background-color: $bg-2;
   padding: 1rem;
   border-bottom: 1px solid $borders;
+  position: relative;
+
+  &__volume {
+    display: flex;
+    width: 30vw;
+    gap: 1rem;
+    align-items: center;
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+  }
 
   &__button {
     display: flex;
