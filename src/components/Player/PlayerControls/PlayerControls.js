@@ -13,12 +13,13 @@ export default function PlayerControls({ allFiles }) {
 
 
   const [isPlaying, setIsPlaying] = useState(false)
-  const [hiddenPlay, setHiddenPlay] = useState(true)
+  const [hiddenPlay, setHiddenPlay] = useState(false)
 
   useEffect(() => {
     window.Howler.mute(true)
     setIsPlaying(false)
-    setHiddenPlay(true)
+    if (melodyFile || chordsFile || bassFile || drumsFile)
+      setHiddenPlay(true)
     if ((prevMelody.current && !melodyFile) || (prevChords.current && !chordsFile) || (prevBass.current && !bassFile) || (prevDrums.current && !drumsFile)) {
       onLoad()
     }
