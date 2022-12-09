@@ -9,7 +9,7 @@
   padding: .5rem;
 
 
-  & * {
+  & span {
     display: inline-block;
     width: 100%;
     white-space: nowrap;
@@ -19,5 +19,20 @@
 
   &:hover {
     background-color: $bg-3;
+  }
+
+  &__play {
+    background: none;
+    border: none;
+
+    & path {
+      fill: white;
+    }
+  }
+
+  &__playing {
+    height: 2rem;
+    filter: invert(1);
+    padding-right: .25rem;
   }
 }
