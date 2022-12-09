@@ -1,6 +1,6 @@
 import { Pause, PlayArrow, Stop, VolumeDown, VolumeUp } from "@mui/icons-material";
 import { CircularProgress, Slider } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import ReactHowler from 'react-howler';
 import './PlayerControls.scss';
 
@@ -15,6 +15,26 @@ export default function PlayerControls({ allFiles, trackVolumes }) {
 
   const [isPlaying, setIsPlaying] = useState(false)
   const [hiddenPlay, setHiddenPlay] = useState(false)
+
+  const handleKeyPress = useCallback(event => {
+    if (event.key === ' ') {
+      setIsPlaying(!isPlaying)
+    }
+    if (event.key === 'Enter') {
+      window.Howler.stop()
+      setIsPlaying(false)
+    }
+  }, [isPlaying])
+
+  useEffect(() => {
+    // attach the event listener
+    document.addEventListener('keydown', handleKeyPress);
+
+    // remove the event listener
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
 
   useEffect(() => {
     window.Howler.mute(true)
@@ -38,7 +58,7 @@ export default function PlayerControls({ allFiles, trackVolumes }) {
 
   const handleVolume = (e) => {
     window.Howler.volume([e.target.value / 100])
-    setMasterVolume(window.Howler.volume)
+    setMasterVolume(window.Howler.volume())
   }
 
   const handleEnd = () => {
