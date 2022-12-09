@@ -5,7 +5,7 @@
 //-keyboard controls
 //-visual playback
 //-help modal
-//-play track sample
+<!-- //-play track sample -->
 //-key change pitch shifting
 //-browser filtering
 //-track uploading
