@@ -4,7 +4,7 @@ import ArrangeView from './ArrangeView/ArrangeView'
 import PlayerControls from './PlayerControls/PlayerControls'
 import PlayerHeader from './PlayerHeader/PlayerHeader'
 
-export default function Player({ tracksState }) {
+export default function Player({ tracksState, setModalOpen }) {
 
   const [activeTab, setActiveTab] = useState('arrange')
 
@@ -47,7 +47,7 @@ export default function Player({ tracksState }) {
 
   return (
     <div>
-      <PlayerHeader tabState={{ activeTab, setActiveTab }} />
+      <PlayerHeader tabState={{ activeTab, setActiveTab }} setModalOpen={setModalOpen} />
       <ArrangeView tracksState={tracksState} currentTracksState={currentTracksState} setFiles={setFiles} volumesState={volumesState} />
       <PlayerControls allFiles={allFiles} trackVolumes={trackVolumes} />
     </div>

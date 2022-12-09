@@ -3,7 +3,7 @@ import { ReactComponent as ArrangeIcon } from '../../../assets/images/icons/arra
 // import { ReactComponent as PianoIcon } from '../../../assets/images/icons/piano.svg'
 import './PlayerHeader.scss'
 
-export default function PlayerHeader({ tabState }) {
+export default function PlayerHeader({ tabState, setModalOpen }) {
 
   const { activeTab, setActiveTab } = tabState
 
@@ -32,7 +32,7 @@ export default function PlayerHeader({ tabState }) {
         </div> */}
       </nav>
       {/* help button tab */}
-      <div className="player-header__tab">
+      <div className="player-header__tab" onClick={() => setModalOpen(true)}>
         <HelpIcon className="player-header__icon" />
         <span className="player-header__label">Help</span>
       </div>
