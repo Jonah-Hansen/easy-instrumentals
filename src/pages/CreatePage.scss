@@ -1,0 +1,30 @@
+@use '../styles/partials/all' as *;
+
+.help-modal {
+  width: 75%;
+  background-color: $bg-2;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 10rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  &__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__key {
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+}
