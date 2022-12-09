@@ -1,0 +1,54 @@
+@use '../../styles/partials/all' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-between;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    text-decoration: none;
+  }
+
+  &__logo {
+    height: 2rem;
+    width: 2rem;
+
+    & path {
+      fill: white;
+    }
+  }
+
+  &__heading {
+    color: white;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: white;
+    background-color: $bg-2;
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    border: 1px solid $borders;
+
+    &.active * {
+      filter: none;
+    }
+
+    &:hover {
+      background-color: $bg-3;
+    }
+
+    &-text {
+      @include inactive-filter;
+    }
+  }
+}

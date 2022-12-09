@@ -2,9 +2,9 @@
 <!-- //-stop playback when all tracks finished playing -->
 //-sorting
 //-home page/main header
-//-keyboard controls
+<!-- //-keyboard controls -->
 //-visual playback
-//-help modal
+<!-- //-help modal -->
 <!-- //-play track sample -->
 //-key change pitch shifting
 //-browser filtering
