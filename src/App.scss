@@ -9,4 +9,11 @@ html {
 body {
   font-family: 'roboto', arial, sans-serif;
   color: white;
+
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

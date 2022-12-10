@@ -1,0 +1,11 @@
+@use '../../styles/partials/all' as *;
+
+.footer {
+  padding: 2rem;
+  text-align: right;
+  margin-top: auto;
+
+  & a {
+    color: $prime-blue;
+  }
+}

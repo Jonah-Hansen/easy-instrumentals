@@ -1,5 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import './App.scss';
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import CreatePage from "./pages/CreatePage/CreatePage";
 import HomePage from "./pages/HomePage/HomePage";
@@ -19,6 +20,7 @@ function App() {
           </>
         } />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
