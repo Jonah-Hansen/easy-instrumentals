@@ -2,9 +2,9 @@ import { Modal } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import Browser from "../components/Browser/Browser"
-import Player from "../components/Player/Player"
-import { getAllTracks } from '../supabase/supabase'
+import Browser from "../../components/Browser/Browser"
+import Player from "../../components/Player/Player"
+import { getAllTracks } from '../../supabase/supabase'
 import './CreatePage.scss'
 
 function CreatePage() {

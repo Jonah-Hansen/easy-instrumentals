@@ -1,13 +1,17 @@
-import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import './App.scss';
-import CreatePage from "./pages/CreatePage";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import CreatePage from "./pages/CreatePage/CreatePage";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
 
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path="/" element={<Navigate to='/create' />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />
         <Route path="*" element={
           <>
@@ -16,6 +20,7 @@ function App() {
           </>
         } />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -1,1 +1,10 @@
 @use '../../../../styles/partials/all' as *;
+
+.arrange-editor {
+  border-top: 1px solid $borders;
+
+  @include tablet {
+    border-left: 1px solid $borders;
+    border-right: 1px solid $borders;
+  }
+}

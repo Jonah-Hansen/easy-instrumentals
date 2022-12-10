@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getMidiURL } from '../../supabase/supabase'
 import ArrangeView from './ArrangeView/ArrangeView'
+import './Player.scss'
 import PlayerControls from './PlayerControls/PlayerControls'
 import PlayerHeader from './PlayerHeader/PlayerHeader'
 
@@ -46,7 +47,7 @@ export default function Player({ tracksState, setModalOpen }) {
 
 
   return (
-    <div>
+    <div className='player'>
       <PlayerHeader tabState={{ activeTab, setActiveTab }} setModalOpen={setModalOpen} />
       <ArrangeView tracksState={tracksState} currentTracksState={currentTracksState} setFiles={setFiles} volumesState={volumesState} />
       <PlayerControls allFiles={allFiles} trackVolumes={trackVolumes} />
