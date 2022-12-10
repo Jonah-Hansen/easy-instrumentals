@@ -9,9 +9,18 @@
   border-bottom: 1px solid $borders;
   position: relative;
 
+  @include tablet {
+    width: 100%;
+    max-width: 80rem;
+    align-self: center;
+    border-left: 1px solid $borders;
+    border-right: 1px solid $borders;
+    border-radius: 0 0 10px 10px;
+  }
+
   &__volume {
     display: flex;
-    width: 30vw;
+    width: 30%;
     gap: 1rem;
     align-items: center;
     position: absolute;

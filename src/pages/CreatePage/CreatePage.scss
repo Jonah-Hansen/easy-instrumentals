@@ -1,5 +1,11 @@
 @use '../../styles/partials/all' as *;
 
+#create {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .help-modal {
   width: 75%;
   background-color: $bg-2;

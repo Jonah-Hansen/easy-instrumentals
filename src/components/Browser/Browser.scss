@@ -6,6 +6,13 @@
   gap: 1.5rem;
   padding: 1rem;
 
+  @include tablet {
+    width: 100%;
+    max-width: 80rem;
+    align-self: center;
+  }
+
+
   &__heading {
     font-size: 1.5rem;
     font-weight: 700;
