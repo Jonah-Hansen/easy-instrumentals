@@ -12,6 +12,7 @@ body {
 
 }
 
+//so that footer can be at the bottom of viewport when viewport is taller than total app height
 #root {
   min-height: 100vh;
   display: flex;

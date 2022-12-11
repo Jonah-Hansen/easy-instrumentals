@@ -7,7 +7,7 @@ $borders: #4e5363;
 $error: #912929;
 $hero: #3c367e;
 
+//wacky filter to get a faded bluish hue for inactive color when base color is white
 @mixin inactive-filter() {
-  //wacky filter to get a faded bluish hue for inactive color when base color is white
   filter: brightness(.75) saturate(1000) sepia(1) hue-rotate(190deg) opacity(.65);
 }

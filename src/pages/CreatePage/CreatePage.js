@@ -9,11 +9,15 @@ import './CreatePage.scss'
 
 function CreatePage() {
 
+  //state to track modal
   const [modalOpen, setModalOpen] = useState(false)
 
+  //state to store basic track info (id, type, title)
   const [tracks, setTracks] = useState([])
+  //obj to store track state to be passed as props more easily
   const tracksState = { tracks, setTracks }
 
+  //on page load, get all tracks and store in state
   useEffect(() => {
     getAllTracks()
       .then(data => setTracks(data))
@@ -25,7 +29,7 @@ function CreatePage() {
         <Player tracksState={tracksState} setModalOpen={setModalOpen} />
         <Browser tracks={tracks} />
       </main>
-
+      {/* help modal */}
       <Modal open={modalOpen} onClose={() => setModalOpen(false)} >
         <aside className='help-modal' >
           <section className='help-modal__section'>

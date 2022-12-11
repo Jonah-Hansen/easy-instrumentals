@@ -5,6 +5,7 @@ import './PlayerHeader.scss'
 
 export default function PlayerHeader({ tabState, setModalOpen }) {
 
+  //deconstruct tab state. currently not used as there is only one tab
   const { activeTab, setActiveTab } = tabState
 
   return (

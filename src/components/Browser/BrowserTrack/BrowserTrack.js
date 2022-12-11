@@ -9,8 +9,10 @@ import './BrowserTrack.scss'
 export default function BrowserTrack({ track }) {
   const { title, type, id } = track
 
+  //state to track if the sample is playing
   const [playing, setPlaying] = useState(false)
 
+  //react-dnd hook for dragging 
   const [{ isDragging }, dragRef] = useDrag({
     type: type,
     item: { track },
@@ -19,6 +21,7 @@ export default function BrowserTrack({ track }) {
     })
   })
 
+  //when sample play is pressed, initialize a Howler to play 5s of the track and show gif
   const handleSample = async () => {
     const url = await getMidiURL(id)
     const sample = new Howl({

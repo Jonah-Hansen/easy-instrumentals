@@ -3,6 +3,7 @@ import './BrowserCategory.scss';
 
 export default function BrowserCategory({ title, tracks }) {
 
+  //a category containing all tracks that match the category type
   return (
     <section className='browser-category'>
       <h3 className='browser-category__heading'>{title}</h3>
