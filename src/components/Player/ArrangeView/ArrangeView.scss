@@ -1,0 +1,9 @@
+@use '../../../styles/partials/all' as *;
+
+.arrange-view {
+  @include tablet {
+    width: 100%;
+    max-width: 80rem;
+    align-self: center;
+  }
+}

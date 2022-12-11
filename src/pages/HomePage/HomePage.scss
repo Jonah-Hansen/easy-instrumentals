@@ -1,0 +1,110 @@
+@use '../../styles/partials/all' as *;
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+
+  &__hero {
+    display: flex;
+    gap: 1rem;
+    background-color: $hero;
+    padding: 2rem;
+
+    @include desktop {
+      padding: 4rem;
+    }
+
+    &-headings {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &-cta {
+      background-color: white;
+      border: none;
+      border-radius: 50px;
+      width: 100%;
+      padding: 1rem 2rem;
+
+      color: $prime-blue;
+      font-weight: 900;
+      font-size: 1.25rem;
+      cursor: pointer;
+
+      &-link {
+        margin: auto;
+      }
+    }
+
+    &-img {
+      width: 33%;
+      min-width: 20rem;
+      border-radius: 10px;
+      object-fit: cover;
+      object-position: left 25%;
+
+      @include desktop {
+        width: 70%;
+        height: 36rem;
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 1.75rem;
+    font-weight: 400;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__sub-heading {
+    font-style: italic;
+    font-size: 1.25rem;
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    line-height: 1.5;
+    background-color: $bg-2;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      padding: 4rem;
+    }
+
+    & a {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: $prime-blue;
+    }
+
+    &-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      background-color: $bg-1;
+      border-radius: 10px;
+      padding: 1rem;
+
+      @include tablet {
+        width: 47%;
+      }
+    }
+
+    &-divider {
+      width: 100%;
+    }
+  }
+}
