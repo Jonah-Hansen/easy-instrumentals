@@ -18,6 +18,8 @@ export default function PlayerControls({ allFiles, trackVolumes }) {
   const [isPlaying, setIsPlaying] = useState(false)
   const [hiddenPlay, setHiddenPlay] = useState(false)
 
+  const [playHeadPos, setPlayHeadPos] = useState(0)
+
   //function for keyboard controls
   const handleKeyPress = useCallback(event => {
     if (event.key === ' ') {
@@ -26,6 +28,7 @@ export default function PlayerControls({ allFiles, trackVolumes }) {
     if (event.key === 'Enter') {
       window.Howler.stop()
       setIsPlaying(false)
+      setPlayHeadPos(0)
     }
   }, [isPlaying])
 
@@ -56,9 +59,17 @@ export default function PlayerControls({ allFiles, trackVolumes }) {
     prevDrums.current = drumsFile
   }, [melodyFile, chordsFile, bassFile, drumsFile])
 
+  const [tick, setTick] = useState(0)
+  setTimeout(() => { setTick(tick + 1) }, 39)
+  useEffect(() => {
+    if (isPlaying) setPlayHeadPos(() => playHeadPos + .25)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPlaying, tick])
+
   //stop hidden play once file is loaded
   const onLoad = () => {
     window.Howler.stop()
+    setPlayHeadPos(0)
     setHiddenPlay(false)
     window.Howler.mute(false)
   }
@@ -73,10 +84,12 @@ export default function PlayerControls({ allFiles, trackVolumes }) {
   const handleEnd = () => {
     window.Howler.stop()
     setIsPlaying(false)
+    setPlayHeadPos(0)
   }
 
   return (
     <div className='player-controls'>
+      <div className="player-controls__play-head" style={{ left: `${playHeadPos}%` }} />
       <div className='player-controls__volume'>
         <VolumeDown />
         <Slider aria-label='volume' value={masterVolume * 100} onChange={handleVolume} />
@@ -86,6 +99,7 @@ export default function PlayerControls({ allFiles, trackVolumes }) {
         onClick={() => {
           setIsPlaying(false)
           window.Howler.stop()
+          setPlayHeadPos(0)
         }}>
         <Stop />
       </button>

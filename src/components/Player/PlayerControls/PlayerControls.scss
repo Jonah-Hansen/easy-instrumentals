@@ -18,6 +18,15 @@
     border-radius: 0 0 10px 10px;
   }
 
+  &__play-head {
+    position: absolute;
+    height: 16rem;
+    width: 1px;
+    bottom: 4.5rem;
+    margin-left: 7.5rem;
+    background-color: $error;
+  }
+
   &__volume {
     display: flex;
     width: 30%;
