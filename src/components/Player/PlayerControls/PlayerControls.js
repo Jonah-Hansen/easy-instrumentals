@@ -90,8 +90,8 @@ export default function PlayerControls({ allFiles, trackVolumes }) {
         <Stop />
       </button>
       {/* show play, pause or loading depending on states */}
-      <button className={`player-controls__button--play-pause${hiddenPlay ? ' disabled' : ''}`}
-        onClick={() => !hiddenPlay && setIsPlaying(!isPlaying)} >
+      <button className={`player-controls__button--play-pause${hiddenPlay || (!melodyFile && !chordsFile && !bassFile && !drumsFile) ? ' disabled' : ''}`}
+        onClick={() => (!hiddenPlay && (melodyFile || chordsFile || bassFile || drumsFile)) && setIsPlaying(!isPlaying)} >
         {isPlaying ? <Pause /> : hiddenPlay ? <CircularProgress /> : <PlayArrow />}
       </button>
       {/* load a reactHowler for each valid file */}
