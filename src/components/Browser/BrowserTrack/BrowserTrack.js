@@ -36,7 +36,6 @@ export default function BrowserTrack({ track }) {
       sample.stop()
       setPlaying(false)
     }, 5000)
-
   }
 
   return (
