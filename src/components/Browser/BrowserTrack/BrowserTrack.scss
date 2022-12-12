@@ -7,6 +7,7 @@
   border-radius: 50px;
   text-align: center;
   padding: .5rem;
+  cursor: grab;
 
 
   & span {
@@ -24,6 +25,7 @@
   &__play {
     background: none;
     border: none;
+    cursor: pointer;
 
     & path {
       fill: white;
