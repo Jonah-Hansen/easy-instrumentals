@@ -26,6 +26,15 @@ it is connected to a Supabase Backend-as-a-service project that hosts a PostgreS
 - visual representation of playback position
 
 ### see the deployed production build on Vercel here: https://easy-instrumentals.vercel.app/
+to run easy instrumentals locally in a development environment:
+1. download or clone this repo.
+2. create a supabase project with at minimum
+    - a table called 'tracks' with fields id(UUID), title(string), and type(string: 'melody', 'chords', 'bass', or 'drums')
+    - a public storage bucket to hold wav files named according the the id of the associated track in the database
+    - note: you may need to configure a policy for the public bucket to allow anonymous users to access wav files. (you can use the template for images and just replace the file extension from jpg to wav)
+3. create a .env based on .env-example, replacing the values with the api key and url from your supabase project
+4. run npm install in the project directory to install the dependencies
+5. run npm start in the project directory to launch the app. it will automatically open your browser to http://localhost:3000
 
 ## What I learned building Easy Instrumentals:
 - using [react-DnD](https://github.com/react-dnd/react-dnd) for drag and drop functionality
