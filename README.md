@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# 🎹 [Easy Instrumentals](https://easy-instrumentals.vercel.app/)
+## by [Jonah Hansen](https://linkedin.com/in/jonah-hansen-dev)
+ Capstone project for [BrainStation](https://brainstation.io/) Web Development Bootcamp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## The Problem: 
+Many people are interested in the idea of producing their own music, but the barrier to entry is quite high. Not only does one need to commit to purchasing a potentially expensive Digital Audio Workstation, but the learning curve of such sophisticated software is quite steep. Additionally, without a sound understanding of music theory, it can be difficult to create melodies and chord progressions from scratch, so those who just want to make music to sing or play along to end up giving up the idea of making something themselves. 
 
-In the project directory, you can run:
+## the Solution:
+Easy Instrumentals aims to solve this problem by providing an accessible, simplified workstation with limited features to lower the learning curve, and the ability to drag and drop in pre-made tracks that can be mixed, matched and modified, relieving the stress of making an entire song from scratch.
 
-### `npm start`
+Easy Instrumentals is designed for music producers, musicians, singers, and anyone interested in creating music themselves. It is simple enough that little knowledge of music theory or the function of other DAWs is required; but flexible enough that those with more experience can achieve the effects they want within the designed limitations. Easy Instrumentals provides an easily accessible and simplified outlet for prototyping new music.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack:
+Easy instrumentals is built using React, with Sass and MUI for styling and Howler for audio processing.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+it is connected to a Supabase Backend-as-a-service project that hosts a PostgreSQL database and static file storage.
 
-### `npm test`
+## Features:
+- drag and drop pre-made tracks
+- listen to a 5s sample of a track
+- play all active tracks simultaneously
+- control master volume and individual track volume 
+- keyboard controls for pause/play and stop 
+- visual representation of playback position
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### see the deployed production build on Vercel here: https://easy-instrumentals.vercel.app/
 
-### `npm run build`
+## What I learned building Easy Instrumentals:
+- using [react-DnD](https://github.com/react-dnd/react-dnd) for drag and drop functionality
+- api usage with a backend-as-a-service like [Supabase](https://supabase.com/)
+- using [MUI](https://mui.com/) components and icons, as well as custom SVG icons as react components
+- adding event listeners for keyboard shortcuts
+- audio processing and playback with [react-howler](https://github.com/thangngoc89/react-howler), a react wrapper for [HowlerJS](https://github.com/goldfire/howler.js/)
+- deploying a front-end app with [Vercel](https://vercel.com)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## future development
+post bootcamp, I'd like to rebuild easy instrumentals as a react-typescript project, and use midi data instead of audio files for tracks.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+while more complicated to implement, using midi data will make it easier to implement greater functionality with features such as:
+- modifying virtual instruments used by the tracks
+- global control over key and bpm
+- editing notes within the tracks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+once functional, easy instrumentals could be made into a full social platform where users can log in, upload their own midi tracks, create songs and download the midi or compiled audio file, and share their creations.
